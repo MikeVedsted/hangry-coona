@@ -1,0 +1,120 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+
+/* .App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+} */
+
+.page-content {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*
+
+.mains {
+  display: flex;
+}
+
+.main-ingredient {
+  font-size: smaller;
+  display: inline;
+  list-style: none;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.types {
+  display: flex;
+}
+
+.type {
+  font-size: smaller;
+  display: inline;
+  list-style: none;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.one {
+  background-color: teal;
+}
+
+.two {
+  background-color: #d8ca0a;
+}
+
+ */
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.surprise-button {
+  margin: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 50px;
+  border-radius: 8px;
+  height: 120px;
+  width: 120px;
+  background-color: rgb(182, 115, 14);
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-button {
+  margin: 20px;
+  font-family: "Montserrat", sans-serif;
+  background-color: teal;
+  text-transform: uppercase;
+  border: 1px solid white;
+  color: white;
+  font-size: 50px;
+  border-radius: 8px;
+  height: 120px;
+  width: 120px;
+}
+
+.button-text {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.coona {
+  font-family: "Dancing Script", cursive;
+  font-size: 6rem;
+  font-weight: 400;
+  margin-top: -60px;
+  margin-left: -20px;
+}
