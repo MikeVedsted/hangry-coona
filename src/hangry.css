@@ -12,7 +12,7 @@
 } */
 
 .page-content {
-  height: 60vh;
+  /* height: 60vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +73,7 @@
   border-radius: 8px;
   height: 120px;
   width: 120px;
-  background-color: rgb(182, 115, 14);
+  background-color: #e40000;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
@@ -81,7 +81,7 @@
 .search-button {
   margin: 20px;
   font-family: "Montserrat", sans-serif;
-  background-color: teal;
+  background-color: #6b5850;
   text-transform: uppercase;
   border: 1px solid white;
   color: white;
@@ -106,6 +106,7 @@
 
 .logo {
   width: 100%;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   margin-top: 40px;
@@ -117,4 +118,48 @@
   font-weight: 400;
   margin-top: -60px;
   margin-left: -20px;
+  margin-bottom: 0;
+}
+
+.banner {
+  width: 100%;
+}
+
+.home-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  float: right;
+  font-size: 20px;
+  margin: 20px;
+}
+
+
+.search {
+  margin: 0 20px;
+}
+
+.search-filter {
+  margin: 3px;
+  background-color: white;
+  border: 1px solid white;
+  color: #6b5850;
+  border-radius: 4px;
+}
+
+.search-filter:hover {
+  background-color: #6b5850;
+  border-color: white;
+  color: white;
+}
+
+h3 {
+  width: fit-content;
+  padding-bottom: 15px;
+  margin: 20px auto;
+  border-bottom: 2px solid #e40000;
+}
+
+section {
+  margin-bottom: 40px;
 }
