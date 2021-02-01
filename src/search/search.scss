@@ -1,0 +1,38 @@
+.search {
+  height: 90vh;
+  min-height: 90vh;
+  width: 100vw;
+  overflow: hidden;
+  margin-top: -20px;
+
+  &__title {
+    width: 170px;
+    padding-bottom: 10px;
+    margin: 15px auto;
+    border-bottom: 2px solid #e40000;
+  }
+}
+
+.horizontal-slid {
+  margin: 25px 0;
+  width: 100vw;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-filter {
+  margin: 3px;
+  background-color: #6b5850;
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+
+  &--selected {
+    margin: 3px;
+    background-color: white;
+    border: 1px solid white;
+    color: #6b5850;
+    border-radius: 4px;
+  }
+}
