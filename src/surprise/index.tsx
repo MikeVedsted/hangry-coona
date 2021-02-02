@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaw, faSearch } from "@fortawesome/free-solid-svg-icons";
-import Dish from "../search/dish";
-import { dishes } from "../data";
+
+import Dish from "../dish";
+import { dishes } from "../assets/data";
 import "./surprise.scss";
 
-const Surprise = ({ content, setContent }: any) => {
+const Surprise = () => {
   const [index, setIndex] = useState(Math.floor(Math.random() * dishes.length));
 
   const randomDish = () => {
@@ -14,7 +15,7 @@ const Surprise = ({ content, setContent }: any) => {
   };
 
   return (
-    <div className="surprise" hidden={content !== "surprise"}>
+    <div className='surprise'>
       <Dish
         name={dishes[index].name}
         main={dishes[index].main}
@@ -22,9 +23,11 @@ const Surprise = ({ content, setContent }: any) => {
         time={dishes[index].time}
         image={dishes[index].image}
       />
-      <button className="new-dish-button" onClick={() => randomDish()}>
+      <button className="surprise__new-button" onClick={() => randomDish()}>
         <FontAwesomeIcon icon={faPaw} />
-        <span className="new-dish-button__text">Give me a different one</span>
+        <span className="surprise__new-button--text">
+          Give me a different one
+        </span>
       </button>
     </div>
   );

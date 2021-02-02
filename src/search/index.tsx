@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { dishes, types, mains } from "../data";
-import { useFormFields } from "../hooks/useFormfields";
+import React, { useState } from "react";
+
+import Dish from "../dish";
+import { types, mains } from "../assets/data";
+import { useFormFields } from "../hooks/useFormFields";
 import useDishes from "../hooks/useDishes";
-import Dish from "./dish";
 import "./search.scss";
 
-const Search = ({ content, setContent }: any) => {
+const Search = () => {
   const [filterOption, setFilterOption] = useState<any[]>([]);
-
-  const [, filteredHats] = useDishes(filterOption);
-
-  const [fields, handleFields, handleArrays] = useFormFields({
+  const [hideMains, setHideMains] = useState(true);
+  const [hideTypes, setHideTypes] = useState(true);
+  const [filteredDishes] = useDishes(filterOption);
+  const [fields, , handleArrays] = useFormFields({
     main: [],
     type: [],
   });
@@ -21,17 +22,32 @@ const Search = ({ content, setContent }: any) => {
     setFilterOption(filter);
   }
 
+  const handleToggle = (clicked: string) => {
+    if (clicked === "main") {
+      setHideMains(!hideMains);
+      setHideTypes(true);
+    } else if (clicked === "type") {
+      setHideTypes(!hideTypes);
+      setHideMains(true);
+    }
+  };
+
   return (
-    <div className="search" hidden={content !== "search"}>
+    <div className="search">
       <section>
-        <h3 className="search__title">Main ingredient</h3>
+        <h3 onClick={() => handleToggle("main")} className="search__title">
+          Main ingredient{" "}
+          <span className="search__title--count">({fields.main.length})</span>
+        </h3>
         {mains.map((main) => (
           <button
+            key={main}
             id={main}
+            hidden={hideMains}
             className={
               filterOption.includes(main)
-                ? "search-filter"
-                : "search-filter--selected"
+                ? "search__filter"
+                : "search__filter--selected"
             }
             onClick={() => handleFilterChecks("main", main)}
           >
@@ -40,24 +56,31 @@ const Search = ({ content, setContent }: any) => {
         ))}
       </section>
       <section>
-        <h3 className="search__title">Type</h3>
+        <h3 onClick={() => handleToggle("type")} className="search__title">
+          Type{" "}
+          <span className="search__title--count">({fields.type.length})</span>
+        </h3>
         {types.map((type) => (
           <button
+            key={type}
             id={type}
+            hidden={hideTypes}
             onClick={() => handleFilterChecks("type", type)}
             className={
               filterOption.includes(type)
-                ? "search-filter"
-                : "search-filter--selected"
+                ? "search__filter"
+                : "search__filter--selected"
             }
           >
             {type}
           </button>
         ))}
       </section>
-      <section className="horizontal-slid">
-        {filteredHats.map((dish: any) => (
+
+      <section className="search__horizontal-slide">
+        {filteredDishes.map((dish: any) => (
           <Dish
+            key={dish.name}
             name={dish.name}
             main={dish.main}
             type={dish.type}
@@ -66,6 +89,12 @@ const Search = ({ content, setContent }: any) => {
           />
         ))}
       </section>
+      <p className="search__result-count">
+        Displaying
+        {filteredDishes.length === 1
+          ? ` ${filteredDishes.length} result`
+          : ` ${filteredDishes.length} results`}
+      </p>
     </div>
   );
 };

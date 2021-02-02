@@ -1,27 +1,22 @@
-import { useState, useEffect, useMemo } from "react";
-import { dishes } from "../data";
+import { useState, useEffect } from "react";
+import { dishes } from "../assets/data";
 
-function useHats(filterOption: string[]) {
-  const [hats, setHats] = useState<any[]>([]);
-  const [searchedHats, setSearchedHats] = useState<any[]>([]);
-  const [filteredHats, setFilteredHats] = useState<any[]>([]);
+function useDishes(filterOption: string[]) {
+  const [filteredDishes, setFilteredDishes] = useState<any[]>([]);
 
-  useMemo(() => {
-    let filteredHats = [...dishes];
+  useEffect(() => {
+    let filtered = [...dishes];
     if (filterOption.length > 0) {
-      for (let i = 0; i < filterOption.length; i++) {
-        filteredHats = dishes.filter(
-          (hat) =>
-            hat.type.includes(filterOption[i]) ||
-            hat.main.includes(filterOption[i])
-        );
-      }
+      filtered = dishes.filter(
+        (dish) =>
+          filterOption.some((filter) => filter === dish.main) ||
+          filterOption.some((filter) => filter === dish.type)
+      );
     }
+    setFilteredDishes(filtered);
+  }, [filterOption]);
 
-    setFilteredHats(filteredHats);
-  }, [searchedHats, filterOption]);
-
-  return [hats, filteredHats];
+  return [filteredDishes];
 }
 
-export default useHats;
+export default useDishes;

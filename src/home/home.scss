@@ -1,59 +1,27 @@
+@import "../config";
+
 .home {
-  height: 100vh;
-  min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.logo {
+  @include flexColumn;
   width: 100%;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
+  height: 100%;
+  background-image: url(../assets/AF002142_01.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 120px;
 
-.coona {
-  font-family: "Dancing Script", cursive;
-  font-size: 6rem;
-  font-weight: 400;
-  margin-top: -60px;
-  margin-left: -20px;
-  margin-bottom: 0;
-}
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0 $largeUnit;
 
-.frontpage-gif {
-  height: 200px;
-  margin: 20px;
-}
+    &--surprise {
+      @include action-button;
+      background-color: $coona-red;
+    }
 
-.buttons {
-  display: flex;
-  justify-content: space-around;
-
-  button {
-    margin: 20px;
-    color: white;
-    font-size: 50px;
-    border-radius: 8px;
-    height: 120px;
-    width: 120px;
-    font-family: "Montserrat", sans-serif;
-    border: 1px solid white;
-    text-transform: uppercase;
+    &--search {
+      @include action-button;
+      background-color: $coona-grey;
+    }
   }
-
-  &__surprise {
-    background-color: #e40000;
-  }
-
-  &__search {
-    background-color: #6b5850;
-  }
-}
-
-.button-text {
-  display: block;
-  font-size: 12px;
-  margin-top: 8px;
 }

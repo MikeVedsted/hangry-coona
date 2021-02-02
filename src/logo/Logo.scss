@@ -1,0 +1,15 @@
+@import "../config";
+
+.logo {
+  @include flexColumn;
+  margin: 0;
+
+  &__coona {
+    font-family: "Dancing Script", cursive;
+    font-size: 6rem;
+    font-weight: 400;
+    margin-top: -63px;
+    margin-left: -25px;
+    margin-bottom: 0;
+  }
+}

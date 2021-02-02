@@ -1,38 +1,47 @@
+@import "../config";
+
 .search {
-  height: 90vh;
-  min-height: 90vh;
-  width: 100vw;
+  @include flexColumn;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  margin-top: -20px;
+  padding-top: $largeUnit;
 
   &__title {
-    width: 170px;
-    padding-bottom: 10px;
+    width: 200px;
+    padding-bottom: $smallUnit;
     margin: 15px auto;
-    border-bottom: 2px solid #e40000;
+    border-bottom: 2px solid $coona-red;
+
+    &--count {
+      opacity: 0.6;
+      font-size: 12px;
+    }
   }
-}
 
-.horizontal-slid {
-  margin: 25px 0;
-  width: 100vw;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: row;
-}
+  &__filter {
+    @include filter;
+    background-color: $coona-grey;
+    color: white;
 
-.search-filter {
-  margin: 3px;
-  background-color: #6b5850;
-  border: 1px solid white;
-  color: white;
-  border-radius: 4px;
+    &--selected {
+      @include filter;
+      background-color: white;
+      color: $coona-grey;
+    }
+  }
 
-  &--selected {
-    margin: 3px;
-    background-color: white;
-    border: 1px solid white;
-    color: #6b5850;
-    border-radius: 4px;
+  &__horizontal-slide {
+    margin: auto 0 $smallUnit;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+  }
+
+  &__result-count {
+    margin: 0 0 $smallUnit;
+    font-size: 12px;
   }
 }

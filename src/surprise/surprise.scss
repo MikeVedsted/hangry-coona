@@ -1,29 +1,15 @@
-.new-dish-button {
-  margin: 60px;
-  color: white;
-  font-size: 50px;
-  border-radius: 8px;
-  height: 120px;
-  width: 120px;
-  font-family: "Montserrat", sans-serif;
-  border: 1px solid white;
-  text-transform: uppercase;
-  background-color: #e40000;
-
-  &__text {
-    display: block;
-    font-size: 12px;
-    margin-top: 8px;
-  }
-}
+@import "../config";
 
 .surprise {
-  height: 90vh;
-  min-height: 90vh;
-  width: 100vw;
-  overflow: hidden;
+  @include flexColumn;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: $hugeUnit * 1.5;
 
-  div {
-    margin-top: 60px;
+  &__new-button {
+    @include action-button;
+    margin: auto 0 $largeUnit;
+    background-color: $coona-red;
   }
 }

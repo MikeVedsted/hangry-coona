@@ -1,0 +1,34 @@
+$hugeUnit: 50px;
+$largeUnit: 20px;
+$smallUnit: 10px;
+
+$coona-red: #e40000;
+$coona-grey: #6b5850;
+$primary: #282c34;
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin action-button {
+  font-size: $hugeUnit;
+  border-radius: $smallUnit;
+  height: 120px;
+  width: 120px;
+  border: 1px solid white;
+  text-transform: uppercase;
+
+  &--text {
+    display: block;
+    font-size: 12px;
+    margin-top: $smallUnit;
+  }
+}
+
+@mixin filter {
+  margin: 3px;
+  border: 1px solid white;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
