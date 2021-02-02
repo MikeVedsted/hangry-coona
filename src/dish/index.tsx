@@ -1,8 +1,9 @@
 import React from "react";
 
+import { DishProps } from "../types";
 import "./dish.scss";
 
-const dish = ({ name, main, type, time, image }: any) => {
+const dish = ({ name, image }: DishProps) => {
   return (
     <div className="dish">
       <img className="dish__image" src={image} alt={name} />

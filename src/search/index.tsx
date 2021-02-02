@@ -4,12 +4,13 @@ import Dish from "../dish";
 import { types, mains } from "../assets/data";
 import { useFormFields } from "../hooks/useFormFields";
 import useDishes from "../hooks/useDishes";
+import { DishObject } from "../types";
 import "./search.scss";
 
 const Search = () => {
-  const [filterOption, setFilterOption] = useState<any[]>([]);
-  const [hideMains, setHideMains] = useState(true);
-  const [hideTypes, setHideTypes] = useState(true);
+  const [filterOption, setFilterOption] = useState<string[]>([]);
+  const [hideMains, setHideMains] = useState<boolean>(true);
+  const [hideTypes, setHideTypes] = useState<boolean>(true);
   const [filteredDishes] = useDishes(filterOption);
   const [fields, , handleArrays] = useFormFields({
     main: [],
@@ -39,7 +40,7 @@ const Search = () => {
           Main ingredient{" "}
           <span className="search__title--count">({fields.main.length})</span>
         </h3>
-        {mains.map((main) => (
+        {mains.map((main: string) => (
           <button
             key={main}
             id={main}
@@ -60,7 +61,7 @@ const Search = () => {
           Type{" "}
           <span className="search__title--count">({fields.type.length})</span>
         </h3>
-        {types.map((type) => (
+        {types.map((type: string) => (
           <button
             key={type}
             id={type}
@@ -78,15 +79,8 @@ const Search = () => {
       </section>
 
       <section className="search__horizontal-slide">
-        {filteredDishes.map((dish: any) => (
-          <Dish
-            key={dish.name}
-            name={dish.name}
-            main={dish.main}
-            type={dish.type}
-            time={dish.time}
-            image={dish.image}
-          />
+        {filteredDishes.map((dish: DishObject) => (
+          <Dish key={dish.name} name={dish.name} image={dish.image} />
         ))}
       </section>
       <p className="search__result-count">

@@ -7,7 +7,9 @@ import { dishes } from "../assets/data";
 import "./surprise.scss";
 
 const Surprise = () => {
-  const [index, setIndex] = useState(Math.floor(Math.random() * dishes.length));
+  const [index, setIndex] = useState<number>(
+    Math.floor(Math.random() * dishes.length)
+  );
 
   const randomDish = () => {
     const i = Math.floor(Math.random() * dishes.length);
@@ -15,14 +17,8 @@ const Surprise = () => {
   };
 
   return (
-    <div className='surprise'>
-      <Dish
-        name={dishes[index].name}
-        main={dishes[index].main}
-        type={dishes[index].type}
-        time={dishes[index].time}
-        image={dishes[index].image}
-      />
+    <div className="surprise">
+      <Dish name={dishes[index].name} image={dishes[index].image} />
       <button className="surprise__new-button" onClick={() => randomDish()}>
         <FontAwesomeIcon icon={faPaw} />
         <span className="surprise__new-button--text">

@@ -2,12 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw, faSearch } from "@fortawesome/free-solid-svg-icons";
 
+import { HomeProps } from "../types";
 import Logo from "../logo";
 import "./home.scss";
 
-const Home = ({ setContent }: any) => {
+const Home = ({ setContent }: HomeProps) => {
   return (
-    <div className='home'>
+    <div className="home">
       <Logo />
       <div className="home__buttons">
         <button
