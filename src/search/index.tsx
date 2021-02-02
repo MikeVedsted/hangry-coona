@@ -9,8 +9,8 @@ import "./search.scss";
 
 const Search = () => {
   const [filterOption, setFilterOption] = useState<string[]>([]);
-  const [hideMains, setHideMains] = useState<boolean>(true);
-  const [hideTypes, setHideTypes] = useState<boolean>(true);
+  const [hideMains, setHideMains] = useState<boolean>(false);
+  const [hideTypes, setHideTypes] = useState<boolean>(false);
   const [filteredDishes] = useDishes(filterOption);
   const [fields, , handleArrays] = useFormFields({
     main: [],
@@ -23,20 +23,10 @@ const Search = () => {
     setFilterOption(filter);
   }
 
-  const handleToggle = (clicked: string) => {
-    if (clicked === "main") {
-      setHideMains(!hideMains);
-      setHideTypes(true);
-    } else if (clicked === "type") {
-      setHideTypes(!hideTypes);
-      setHideMains(true);
-    }
-  };
-
   return (
     <div className="search">
       <section>
-        <h3 onClick={() => handleToggle("main")} className="search__title">
+        <h3 onClick={() => setHideMains(!hideMains)} className="search__title">
           Main ingredient{" "}
           <span className="search__title--count">({fields.main.length})</span>
         </h3>
@@ -57,7 +47,7 @@ const Search = () => {
         ))}
       </section>
       <section>
-        <h3 onClick={() => handleToggle("type")} className="search__title">
+        <h3 onClick={() => setHideTypes(!hideTypes)} className="search__title">
           Type{" "}
           <span className="search__title--count">({fields.type.length})</span>
         </h3>
