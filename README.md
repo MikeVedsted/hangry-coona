@@ -9,5 +9,5 @@ App is made to order, with the following requirements:
 Currently only built with the required size in mind, so best viewed on mobile devices. 
 
 ## Demo
-A demo is available at https://hangry-coona.netlify.app/
+A demo is available at https://hangry-coona.netlify.app/  
 *Currently only built with the required size in mind, so best viewed on mobile devices.*
