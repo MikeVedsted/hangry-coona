@@ -1,7 +1,7 @@
 import React from "react";
 
 import { DishProps } from "../types";
-import "./dish.scss";
+import "./Dish.scss";
 
 const dish = ({ name, image }: DishProps) => {
   return (

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Dish from "../dish";
+import Dish from "../Dish";
 import { dishes } from "../assets/data";
-import "./surprise.scss";
+import "./Surprise.scss";
 
 const Surprise = () => {
   const [index, setIndex] = useState<number>(

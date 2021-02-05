@@ -5,6 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import Home from "./home";
 import Search from "./search";
 import Surprise from "./surprise";
+import Disclaimer from "./Disclaimer";
 import "./App.scss";
 
 function App() {
@@ -23,17 +24,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <nav className="nav">
-        <button
-          hidden={content === "start"}
-          className="nav__button"
-          onClick={() => setContent("start")}
-        >
-          <FontAwesomeIcon icon={faHome} />
-        </button>
-      </nav>
-      {populate()}
+    <div className="App-container">
+      <Disclaimer />
+      <div className="App">
+        <nav className="nav">
+          <button
+            hidden={content === "start"}
+            className="nav__button"
+            onClick={() => setContent("start")}
+          >
+            <FontAwesomeIcon icon={faHome} />
+          </button>
+        </nav>
+        {populate()}
+      </div>
     </div>
   );
 }

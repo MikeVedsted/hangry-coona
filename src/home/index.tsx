@@ -4,7 +4,7 @@ import { faPaw, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { HomeProps } from "../types";
 import Logo from "../logo";
-import "./home.scss";
+import "./Home.scss";
 
 const Home = ({ setContent }: HomeProps) => {
   return (

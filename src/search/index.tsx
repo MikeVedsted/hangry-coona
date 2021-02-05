@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import Dish from "../dish";
+import Dish from "../Dish";
 import { types, mains } from "../assets/data";
 import { useFormFields } from "../hooks/useFormFields";
 import useDishes from "../hooks/useDishes";
 import { DishObject } from "../types";
-import "./search.scss";
+import "./Search.scss";
 
 const Search = () => {
   const [filterOption, setFilterOption] = useState<string[]>([]);
